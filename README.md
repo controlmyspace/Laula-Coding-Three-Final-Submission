@@ -1,5 +1,8 @@
 # Laula Nassi - Portfolio Website
 
+
+<a href="https://github.com/controlmyspace/Laula-Coding-Three-Final-Submission">Link to Laula's Website Portfolio</a>
+
 This is my portfolio site built with accessibility in mind. It's fully responsive & works on pretty much any device. It includes the tasks from all the weeks, figma task from week 4 is in a link in the documentation. 
 
 ## What's in here

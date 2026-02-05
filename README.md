@@ -1,6 +1,7 @@
 # Laula Nassi - Portfolio Website
 
 This is my portfolio site built with accessibility in mind. It's fully responsive & works on pretty much any device.
+- 
 
 ## What's in here
 
@@ -11,8 +12,9 @@ This is my portfolio site built with accessibility in mind. It's fully responsiv
 - **images** - Folder with images used 
 - **styles.css** - All the styling
 - **accessibility.js** - Handles the accessibility features
-- **accessibility.md** - Notes on accessibility features & considerations
-- file also icludes images & task files themselves 
+- **accessibility.md** - Documentation on accessibility features, considerations, reflections and future improvements 
+- **documentation.pdf** 
+
 
 ## The animation library
 

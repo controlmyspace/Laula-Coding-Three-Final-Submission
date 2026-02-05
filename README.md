@@ -1,7 +1,6 @@
 # Laula Nassi - Portfolio Website
 
-This is my portfolio site built with accessibility in mind. It's fully responsive & works on pretty much any device.
-- 
+This is my portfolio site built with accessibility in mind. It's fully responsive & works on pretty much any device. It includes the tasks from all the weeks, figma task from week 4 is in a link in the documentation. 
 
 ## What's in here
 

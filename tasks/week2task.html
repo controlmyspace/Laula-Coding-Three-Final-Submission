@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlinked Poetry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background: white;
+            color: black;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .poem {
+            display: none;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .poem.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 40px;
+            opacity: 0.5;
+            letter-spacing: 2px;
+        }
+
+        .poem-text {
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .poem-text p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid black;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            opacity: 0.5;
+            border-bottom: 2px solid black;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 12px;
+            opacity: 0.3;
+            text-align: center;
+        }
+
+        .start-button {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid black;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .start-button:hover {
+            background: black;
+            color: white;
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Poem 1: an Ode to Taimas -->
+        <div class="poem active" id="poem1">
+            <h1>POEM I / AN ODE TO TAIMAS</h1>
+            <div class="poem-text">
+                <p>"I'm taking the dog for a walk".<br>
+                    But more often than not, <br>
+                    I think our dogs are taking us humans out for a walk.<br><br>
+
+                    I pull him the direction and pace I want to go.<br><br>
+
+                    But I should let him lead, <br>
+                    Let him control the pace, <br><br>
+
+                    So I too can learn to smell the <a href="#" data-next="poem2">plants</a><br>
+                    and chase the bugs.</p>
+            </div>
+            <div class="footer">click the underlined word</div>
+        </div>
+
+        <!-- Poem 2: On Immigration -->
+        <div class="poem" id="poem2">
+            <h1>POEM II /ON IMMIGRATION (2022)</h1>
+            <div class="poem-text">
+                <p>It’s easier to learn to love the environment <br>
+                    &nbsp;&nbsp;the nature first<br><br>
+                    
+                    But it’s harder to learn to love the people<br><br>
+                    
+                    Assimilate?<br>
+                       &nbsp;&nbsp; No<br><br>
+
+                    Appreciate?<br>
+                       &nbsp;&nbsp; Yes<br><br>
+
+                    Respect?<br>
+                        &nbsp;&nbsp;Hopefully<br><br>
+
+                    I have since learned<br>
+                        &nbsp;&nbsp;to <a href="#" data-next="poem3">love</a> the space surrounding me<br>
+                            &nbsp;&nbsp;&nbsp;that I used to detest<br><br>
+
+                    I have not yet learned<br>
+                        &nbsp;&nbsp;to love the people surrounding me<br>
+                            &nbsp;&nbsp;&nbsp;that I still hold hate for<br><br>
+
+                    I have to forgive. Within myself.<br>
+
+                    Let go. For myself.</p>
+            </div>
+        </div>
+
+        <!-- Poem 3: Happy Birthday -->
+        <div class="poem" id="poem3">
+            <h1>POEM III / HAPPY BDAY!</h1>
+            <div class="poem-text">
+                <p>Happy bday dear friend<br>
+                    Since the ripe age of four<br>
+                    I <a href="#" data-next="poem4">remember</a> choosing you<br>
+                    A gut feeling from my very core<br>
+                    As a friend necessary to pursue <br> <br>
+
+                    Although we have disconnected<br>
+                    we have always reconnected<br>
+                    despite the many years passing by<br>
+                    via letters, email or through the sky(pe) <br> <br>
+
+                    miles of separation, even in one city<br>
+                    our lives have separated more & more<br>
+                    But I’m glad to truely always know<br>
+                    That we hold onto dearly what we had since four <br> <br>
+
+                    building worlds and characters<br>
+                    that we carried in a plastic file<br>
+                    Perhaps my first creative collaboration<br>
+                    That informed the rest of our lives <br> <br>
+
+                    I wish you curiosity<br>
+                    Creativity and strength<br>
+                    So the happiest of bdays my dear friend,<br>
+                    I'm wishing you a life of love, light and gratitude</p>
+            </div>
+        </div>
+
+        <!-- Poem 4: Post-Soviet Religion -->
+        <div class="poem" id="poem4">
+            <h1>POEM IV / POST-SOVIET RELIGION</h1>
+            <div class="poem-text">
+                <p>My family once knew you<br>
+                    I know it in my name<br><br>
+
+                    <b>But then where were you</b><br>
+                    <b>When the reds came</b><br><br>
+
+                    Years passed<br>
+                    And the reds were joined<br>
+                    By a white and blue<br><br>
+
+                    And you saw your cue<br>
+                    No longer reduced to the past<br>
+                    Or whispers in hushed tones<br><br>
+
+                    We were hesitant to welcome you<br>
+                    We still are<br>
+                    Necessary time to get reacquainted<br><br>
+
+                    But your good nature is being misappropriated<br>
+                    Misused<br>
+                    Misplaced<br><br>
+
+                    And most dangerously<br>
+                    <a href="#" data-next="poem5">Misunderstood</a><br><br>
+
+                    Confusion is rife</p>
+            </div>
+        </div>
+
+        <!-- Poem 5: Мысль -->
+        <div class="poem" id="poem5">
+            <h1>POEM V / Мысль, 22 September 2023</h1>
+            <div class="poem-text">
+                <p>Знаете когда внезапно то что до этого вы не понимали, не оценивали<br><br>
+                    
+                    Становится вам нравится<br><br>
+
+                    И не понятно почему<br>
+                    И что именно поменялись<br>
+                    но что то не заметно поменялись внутри<br><br>
+
+                    И мне нравится что эти моменты действуют как показатели<br>
+                    что мы не стоим на месте,<br>
+                    что <a href="#" data-next="poem1">мы все меняемся</a>,<br><br>
+
+                    и что это совершенно нормально и естественно</p>
+            </div>
+            <div class="footer">the circle completes</div>
+        </div>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('a[data-next]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const currentPoem = document.querySelector('.poem.active');
+                const nextPoemId = link.getAttribute('data-next');
+                const nextPoem = document.getElementById(nextPoemId);
+                
+                if (currentPoem && nextPoem) {
+                    currentPoem.classList.remove('active');
+                    nextPoem.classList.add('active');
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

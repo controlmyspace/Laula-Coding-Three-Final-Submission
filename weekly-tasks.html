@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Tasks - Laula Nassi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Panel -->
+    <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Toggle accessibility menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+        </svg>
+    </button>
+
+    <div id="accessibility-panel" class="accessibility-panel" role="dialog" aria-label="Accessibility settings">
+        <div class="accessibility-content">
+            <h2>Accessibility Settings</h2>
+            
+            <div class="accessibility-option">
+                <label>Theme</label>
+                <div class="theme-buttons">
+                    <button id="theme-light" class="setting-button theme-btn active">
+                        <span>☀️ Light</span>
+                    </button>
+                    <button id="theme-dark" class="setting-button theme-btn">
+                        <span>🌙 Dark</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="font-size">Font Size</label>
+                <div class="font-size-controls">
+                    <button id="font-decrease" class="font-btn" aria-label="Decrease font size">A-</button>
+                    <span id="font-display">100%</span>
+                    <button id="font-increase" class="font-btn" aria-label="Increase font size">A+</button>
+                </div>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="spacing-toggle">Text Spacing</label>
+                <button id="spacing-toggle" class="setting-button toggle-btn">
+                    <span class="toggle-status">Off</span>
+                </button>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="links-toggle">Highlight Links</label>
+                <button id="links-toggle" class="setting-button toggle-btn">
+                    <span class="toggle-status">Off</span>
+                </button>
+            </div>
+
+            <button id="reset-settings" class="reset-button">Reset All Settings</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-wrapper">
+        <header class="site-header">
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">LAULA NASSI</h1>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">ABOUT ME</a>
+            </nav>
+        </header>
+
+        <main class="main-content tasks-page">
+            <h2 class="page-title" data-aos="fade-up">Weekly Tasks</h2>
+
+            <div class="tasks-grid">
+                <!-- Week 1 -->
+                <a href="task-week1.html" class="task-card-link" data-aos="fade-up" data-aos-delay="50">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 1</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 2 -->
+                <a href="task-week2.html" class="task-card-link" data-aos="fade-up" data-aos-delay="100">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 2</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 3 -->
+                <a href="task-week3.html" class="task-card-link" data-aos="fade-up" data-aos-delay="150">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 3</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 6 -->
+                <a href="task-week6.html" class="task-card-link" data-aos="fade-up" data-aos-delay="200">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 6</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 7 -->
+                <a href="task-week7.html" class="task-card-link" data-aos="fade-up" data-aos-delay="250">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 7</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 8 -->
+                <a href="task-week8.html" class="task-card-link" data-aos="fade-up" data-aos-delay="300">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 8</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Week 10 -->
+                <a href="task-week10.html" class="task-card-link" data-aos="fade-up" data-aos-delay="350">
+                    <article class="task-card">
+                        <div class="task-image">
+                            <div class="task-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="task-week">WEEK 10</span>
+                            <span class="task-year">2025</span>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+            <footer class="tasks-footer">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="footer-title">My philosophy</h3>
+                    <p class="footer-text">
+                        Passionate about Central Asian heritage and archival preservation in museums and digital spaces.
+                    </p>
+                    <p class="footer-text">
+                        I am motivated to find ways to better support, contribute to and promote culture through community.
+                    </p>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="footer-title">Reach out</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:laula.nassimoldina@gmail.com">Email</a></li>
+                        <li><a href="https://www.instagram.com/controlyourspace/">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/laula-nassi/">LinkedIn</a></li>
+                        <li><a href="https://www.are.na/laula-nassi/channels">Are.na</a></li>
+                        <li><a href="https://substack.com/@launassi?utm_source=user-menu">Substack</a></li>
+                        <li><a href="https://www.goodreads.com/">Goodreads</a></li>
+                        <li><a href="https://letterboxd.com/launasi/">Letterboxd</a></li>
+                        <li><a href="https://t.me/kazakhart">Telegram</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

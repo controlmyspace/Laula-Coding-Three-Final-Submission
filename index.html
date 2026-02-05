@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laula Nassi - Creative Practitioner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Navigation Link for Keyboard Users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Accessibility Panel -->
+    <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Open accessibility settings menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+        </svg>
+    </button>
+
+    <div id="accessibility-panel" class="accessibility-panel" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true" hidden>
+        <div class="accessibility-content">
+            <h2 id="accessibility-heading">Accessibility Settings</h2>
+            
+            <div class="accessibility-option">
+                <label id="theme-label">Theme</label>
+                <div class="theme-buttons" role="group" aria-labelledby="theme-label">
+                    <button id="theme-light" class="setting-button theme-btn active" aria-pressed="true">
+                        <span aria-hidden="true">☀️</span> Light
+                    </button>
+                    <button id="theme-dark" class="setting-button theme-btn" aria-pressed="false">
+                        <span aria-hidden="true">🌙</span> Dark
+                    </button>
+                </div>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="font-size" id="font-size-label">Font Size</label>
+                <div class="font-size-controls" role="group" aria-labelledby="font-size-label">
+                    <button id="font-decrease" class="font-btn" aria-label="Decrease font size">A-</button>
+                    <span id="font-display" aria-live="polite" aria-atomic="true">100%</span>
+                    <button id="font-increase" class="font-btn" aria-label="Increase font size">A+</button>
+                </div>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="spacing-toggle">Text Spacing</label>
+                <button id="spacing-toggle" class="setting-button toggle-btn" aria-pressed="false">
+                    <span class="toggle-status">Off</span>
+                </button>
+            </div>
+
+            <div class="accessibility-option">
+                <label for="links-toggle">Highlight Links</label>
+                <button id="links-toggle" class="setting-button toggle-btn" aria-pressed="false">
+                    <span class="toggle-status">Off</span>
+                </button>
+            </div>
+
+            <button id="reset-settings" class="reset-button">Reset All Settings</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-wrapper">
+        <header class="site-header" role="banner">
+            <a href="index.html" class="site-title-link" aria-label="Laula Nassi - Home">
+                <h1 class="site-title">LAULA NASSI</h1>
+            </a>
+            <nav class="site-nav" role="navigation" aria-label="Main navigation">
+                <a href="weekly-tasks.html" class="nav-link">WEEKLY TASKS</a>
+            </nav>
+        </header>
+
+        <main class="main-content" id="main-content" role="main">
+            <section class="hero-section">
+                <h2 class="section-title" data-aos="fade-up">Who am I?</h2>
+                
+                <div class="profile-intro-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-image">
+                        <img src="images/profile_picture.JPG" alt="Laula Nassi profile photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+
+                    <div class="intro-section">
+                        <h3 class="intro-title">Introduction</h3>
+                        <p class="intro-text">
+                            Laula Nassi is a creative practitioner from Almaty, Kazakhstan. Her work spans art, 
+                            technology, and culture, with experience working and collaborating with the National Gallery, 
+                            Ruyò Journal, Qara Studios, the Young V&A, V&A East and the National Portrait Gallery.
+                        </p>
+                        <p class="intro-text">
+                            She is currently pursuing a bachelor's degree in Creative Computing at UAL and works at a 
+                            tech startup in London. Next she wants to get into creating handmade handheld fans, playing 
+                            the violin more, reading books in russian and learning kazakh.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="interests-section">
+                <h3 class="section-subtitle" data-aos="fade-up">Interests and hobbies</h3>
+                <p class="interests-text" data-aos="fade-up" data-aos-delay="100">
+                    Since 2020, Laula has been curating @controlyourspace — a digital gallery and archive exploring 
+                    Central Asian art and culture. Next she wants to get into creating handmade handheld fans, 
+                    playing the violin more, reading books in russian and learning kazakh.
+                </p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/image1.jpg" alt="Central Asian art collection display" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/image2.jpeg" alt="Laula at a cultural exhibition" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/image3.jpg" alt="OYU Festival group photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience-section">
+                <h3 class="section-subtitle" data-aos="fade-up">Experience</h3>
+                <div class="experience-list">
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="50">
+                        <span class="exp-title">Presence AI</span>
+                        <span class="exp-year">2025</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                        <span class="exp-title">National Portrait Gallery</span>
+                        <span class="exp-year">2024 - 2026</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="150">
+                        <span class="exp-title">UAL</span>
+                        <span class="exp-year">2024 - 2026</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="exp-title">Young V&A</span>
+                        <span class="exp-year">2025</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="250">
+                        <span class="exp-title">V&A East</span>
+                        <span class="exp-year">2024 - 2025</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="exp-title">Qara Studios</span>
+                        <span class="exp-year">2023</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="350">
+                        <span class="exp-title">Ruyò Journal</span>
+                        <span class="exp-year">2023</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="400">
+                        <span class="exp-title">Good Growth Hub</span>
+                        <span class="exp-year">2023</span>
+                    </div>
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="450">
+                        <span class="exp-title">National Gallery</span>
+                        <span class="exp-year">2021-2022</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="education-section">
+                <h3 class="section-subtitle" data-aos="fade-up">Education</h3>
+                <div class="education-list">
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="50">
+                        <span class="edu-title">UAL, Creative Computing</span>
+                        <span class="edu-year">2024 - 2027</span>
+                    </div>
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                        <span class="edu-title">Node Centre, Public Speaking in Curatorial Arts</span>
+                        <span class="edu-year">2026</span>
+                    </div>
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="150">
+                        <span class="edu-title">IED Firenze, Arts Management</span>
+                        <span class="edu-year">2025</span>
+                    </div>
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="edu-title">Flipside Digital Design</span>
+                        <span class="edu-year">2023</span>
+                    </div>
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="250">
+                        <span class="edu-title">LSE, International Relations</span>
+                        <span class="edu-year">2019 - 2021</span>
+                    </div>
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="edu-title">Brentwood School</span>
+                        <span class="edu-year">2014 - 2019</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

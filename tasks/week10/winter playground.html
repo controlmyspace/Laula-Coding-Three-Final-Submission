@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x87ceeb);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add yellow sun sphere with enhanced shading
+        const sunGeometry = new THREE.SphereGeometry(1.5, 32, 32);
+        const sunMaterial = new THREE.MeshStandardMaterial({ 
+            color: 0xffdd00,
+            emissive: 0xffaa00,
+            emissiveIntensity: 0.6,
+            roughness: 0.7,
+            metalness: 0.1
+        });
+        const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+        sun.position.set(-8, 6, -10);
+        scene.add(sun);
+
+        // Add directional light from the sun
+        const sunLight = new THREE.DirectionalLight(0xffff99, 1.2);
+        sunLight.position.set(-8, 6, -10);
+        sunLight.target.position.set(0, 0, 0);
+        scene.add(sunLight);
+        scene.add(sunLight.target);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        // Grey-toned snow ground
+        const groundGeometry = new THREE.PlaneGeometry(20, 20);
+        const groundMaterial = new THREE.MeshStandardMaterial({ color: 0xd0d0d0 });
+        const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = -2;
+        scene.add(ground);
+
+        const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
+
+        // Function to create a snowman
+        function createSnowman(x, z, scale) {
+            const bottomSphere = new THREE.Mesh(new THREE.SphereGeometry(1 * scale, 32, 32), sphereMaterial);
+            bottomSphere.position.set(x, -1 * scale, z);
+            scene.add(bottomSphere);
+
+            const middleSphere = new THREE.Mesh(new THREE.SphereGeometry(0.7 * scale, 32, 32), sphereMaterial);
+            middleSphere.position.set(x, 0.5 * scale, z);
+            scene.add(middleSphere);
+
+            const topSphere = new THREE.Mesh(new THREE.SphereGeometry(0.5 * scale, 32, 32), sphereMaterial);
+            topSphere.position.set(x, 1.7 * scale, z);
+            scene.add(topSphere);
+        }
+
+        // Original snowman
+        createSnowman(0, 0, 1);
+
+        // 4 more snowmen of different sizes
+        createSnowman(-4, -3, 0.7);
+        createSnowman(4, -2, 0.9);
+        createSnowman(-3, 3, 1.2);
+        createSnowman(3, 4, 0.6);
+
+        // Simple fence - just 4 blocks around perimeter
+        const fenceMaterial = new THREE.MeshStandardMaterial({ 
+            color: 0xe0f0ff,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const fenceSize = 8;
+
+        // Front block
+        const fenceFront = new THREE.Mesh(new THREE.BoxGeometry(16, 1.5, 0.5), fenceMaterial);
+        fenceFront.position.set(0, -1.25, fenceSize);
+        scene.add(fenceFront);
+
+        // Back block
+        const fenceBack = new THREE.Mesh(new THREE.BoxGeometry(16, 1.5, 0.5), fenceMaterial);
+        fenceBack.position.set(0, -1.25, -fenceSize);
+        scene.add(fenceBack);
+
+        // Left block
+        const fenceLeft = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.5, 16), fenceMaterial);
+        fenceLeft.position.set(-fenceSize, -1.25, 0);
+        scene.add(fenceLeft);
+
+        // Right block
+        const fenceRight = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.5, 16), fenceMaterial);
+        fenceRight.position.set(fenceSize, -1.25, 0);
+        scene.add(fenceRight);
+
+        // Add large white 3D heart block
+        const shape = new THREE.Shape();
+        const hx = -2.5;
+        const hy = -5;
+        shape.moveTo(hx + 2.5, hy + 2.5);
+        shape.bezierCurveTo(hx + 2.5, hy + 2.5, hx + 2, hy, hx, hy);
+        shape.bezierCurveTo(hx - 3, hy, hx - 3, hy + 3.5, hx - 3, hy + 3.5);
+        shape.bezierCurveTo(hx - 3, hy + 5.5, hx - 1.5, hy + 7.7, hx + 2.5, hy + 9.5);
+        shape.bezierCurveTo(hx + 6, hy + 7.7, hx + 8, hy + 4.5, hx + 8, hy + 3.5);
+        shape.bezierCurveTo(hx + 8, hy + 3.5, hx + 8, hy, hx + 5, hy);
+        shape.bezierCurveTo(hx + 3.5, hy, hx + 2.5, hy + 2.5, hx + 2.5, hy + 2.5);
+        
+        const extrudeSettings = {
+            depth: 0.5,
+            bevelEnabled: true,
+            bevelThickness: 0.1,
+            bevelSize: 0.1,
+            bevelSegments: 3
+        };
+        
+        const heartGeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        const heartMaterial = new THREE.MeshStandardMaterial({ 
+            color: 0xffffff
+        });
+        const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+        heart.position.set(0, 0, -5);
+        heart.rotation.x = Math.PI;
+        heart.scale.set(0.3, 0.3, 0.3);
+        scene.add(heart);
+
+        camera.position.set(8, 3, 8);
+        camera.lookAt(0, 0, 0);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let autoRotate = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        const animate = function () {
+            requestAnimationFrame(animate);
+            
+            // 360 degree orbit with mouse
+            autoRotate += 0.002;
+            const angle = mouseX * Math.PI + autoRotate;
+            const radius = 12;
+            
+            camera.position.x = radius * Math.cos(angle);
+            camera.position.z = radius * Math.sin(angle);
+            camera.position.y = 3 + mouseY * 3;
+            camera.lookAt(0, 0, 0);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
